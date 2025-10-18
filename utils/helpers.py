@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options # <-- ¡ESTA FALTABA!
+from selenium.webdriver.chrome.options import Options 
 import os
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
@@ -19,27 +19,23 @@ def get_driver():
 
     # quitar aviso de cambio de contraseña insegura
     chrome_options = Options()
-    
-    # 1. Ignorar el Gestor de Contraseñas de Google y las notificaciones
     chrome_options.add_experimental_option("prefs", {
         "credentials_enable_service": False,
         "profile.password_manager_enabled": False
     })
     
-    # 2. Argumentos de supresión (Mantenemos para cobertura)
+    #anulamos pop-ups de chrome
     chrome_options.add_argument("--disable-features=OptimizationGuide")
     chrome_options.add_argument("--disable-features=PasswordManagerV1")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-notifications")
     
-    # 3. Solución definitiva: Forzar un perfil de usuario Temporal/Invitado
+    #modo incognito + guest
     chrome_options.add_argument("--incognito")
     chrome_options.add_argument("--guest") 
     
     service = Service(ChromeDriverManager().install())
-    
-    # Inicializar el driver con todas las opciones
-    driver = webdriver.Chrome(service=service, options=chrome_options) 
+    driver = webdriver.Chrome(service=service, options=chrome_options)                                      # Inicializar el driver con todas las opciones
     
     driver.implicitly_wait(5)
 
