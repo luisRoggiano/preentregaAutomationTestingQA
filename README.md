@@ -28,3 +28,7 @@ Implementación de Screenshots: Se integró la función take_screenshot en utils
 Generación de Evidencia: La ejecución de las pruebas ahora genera automáticamente la evidencia visual en la carpeta test/screenshots/.
 
 Trazabilidad: Los nombres de los archivos de captura, como carritoAddOk_2025_10_18_13-29-26.png y loginOk_2025_10_18_13-29-26.png, demuestran el uso de timestamp único y un formato descriptivo para una trazabilidad clara del estado del sistema tras cada paso clave.
+Detalle Tests PASSED
+<img width="1369" height="347" alt="image" src="https://github.com/user-attachments/assets/9abf5ffe-21c4-42b3-ae9a-4913899ed9c5" />
+
+
