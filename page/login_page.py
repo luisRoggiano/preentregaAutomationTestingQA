@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils.helpers import URL,USERNAME,PASSWORD
 #esperas explicitas, encapsulado
 from selenium.webdriver.support.ui import WebDriverWait

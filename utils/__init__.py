@@ -1,0 +1,1 @@
+#este archivo, aunque esté vacío es lo que permite que las funciones puedan ser importadas en otros archivos.
