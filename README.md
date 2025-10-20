@@ -23,6 +23,8 @@ Funciones de Ayuda: Se modificó utils/helpers.py para incluir la lógica reutil
 3. 📸 Gestión de Evidencia (Oct 18, 2025 - Commit [AutomationQA])
 El commit final agregó la característica más robusta y el requerimiento clave de la pre-entrega:
 
+utilizando el comando pytest -v desde la terminal se puede inicializar el proceso.
+
 Implementación de Screenshots: Se integró la función take_screenshot en utils/helpers.py y se realizaron las llamadas a esta función en test/test_saucedemo.py.
 
 Generación de Evidencia: La ejecución de las pruebas ahora genera automáticamente la evidencia visual en la carpeta test/screenshots/.
