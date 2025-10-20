@@ -27,6 +27,7 @@ def test_catalogo(driver):
     products = driver.find_elements(By.CLASS_NAME, 'inventory_list')                    #usamos findelements por que son muchos elementos
     assert len(products) > 0                                                            #verificamos que los elementos esten contenidos dentro del main container
     take_screenshot(driver, "catalogoOk", __file__) 
+
 def test_carrito(driver):
     #login_saucedemo(driver)
     products = driver.find_elements(By.CLASS_NAME, 'inventory_item')
@@ -38,8 +39,12 @@ def test_carrito(driver):
     #verificamos que el carrito agrega los productos
     badge = driver.find_element(By.CLASS_NAME, 'shopping_cart_badge').text
     assert int(badge) == 3
+    driver.find_element(By.CLASS_NAME, 'shopping_cart_link').click()
+    assert "/cart.html" in driver.current_url
     take_screenshot(driver, "carritoAddOk", __file__) 
-    
+    driver.back()
+    assert "/inventory.html" in driver.current_url
+    products = driver.find_elements(By.CLASS_NAME, 'inventory_item')
     products[0].find_element(By.TAG_NAME, 'button').click()
     #verificamos que el arrito elimina productos
     badge = driver.find_element(By.CLASS_NAME, 'shopping_cart_badge').text
